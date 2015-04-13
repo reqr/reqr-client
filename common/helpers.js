@@ -8,16 +8,25 @@ function getFeatureFiles(base, path) {
   var finder = require('findit')(path);
   var features = [];
 
+  console.log("getFeatureFiles", base, path);
+
   //This listens for files found
   finder.on('file', function (file) {
     if (file.endsWith(".feature")) {
-      // console.log("Found file", file, file.substring(base.length));
-      features.push({ filePath : file, relativePath : file.substring(base.length) });
+
+      //This was leading to a shortened path in the client:
+      // var relative = file.substring(base.length);
+      var relative = file.substring(base.length -2);
+
+      console.log("Found file", file, relative);
+      features.push({ filePath : file, relativePath : relative });
       // console.log(features);
     }
   });
 
+
   finder.on('end', function (file) {
+    // console.log("getFeatureFiles features", features);
     deferred.resolve(features);
   });
 
