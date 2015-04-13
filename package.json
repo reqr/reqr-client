@@ -1,0 +1,20 @@
+{
+  "name": "reqr-client",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "debug": "^2.1.1",
+    "underscore": "^1.8.1",
+    "when": "^3.7.2",
+    "yargs": "^3.1.0",
+    "findit": "^2.0.0",
+    "fs-extra": "^0.17.0",
+    "request": "^2.54.0",
+    "tar": "^2.0.0",
+    "fstream": "^1.0.4"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "reqr-client" : "lib/cli.js"
+  }
+}
