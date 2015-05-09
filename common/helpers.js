@@ -16,7 +16,7 @@ function getFeatureFiles(base, path) {
 
       //This was leading to a shortened path in the client:
       // var relative = file.substring(base.length);
-      var relative = file.substring(base.length -2);
+      var relative = file.substring(base.length -1);
 
       console.log("Found file", file, relative);
       features.push({ filePath : file, relativePath : relative });
